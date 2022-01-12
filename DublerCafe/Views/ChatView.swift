@@ -38,13 +38,15 @@ struct ChatView: View {
                         .frame(height: 50)
                         //.offset(x: 10, y: 10)
                         
-                        Button("send"){
+                        Button(action:{
                             if model.text != "" {
                                 model.position =/* model.position == BubblePosition.right ? BubblePosition.left :*/ BubblePosition.right
                                 model.arrayOfPositions.append(model.position)
                                 model.arrayOfMessages.append(model.text)
                                 model.text = ""
                             }
+                        }){
+                            Image(systemName: "paperplane")
                         }
                     }.padding()
                 }
