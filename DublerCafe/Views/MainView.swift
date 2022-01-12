@@ -21,7 +21,7 @@ struct MainView: View {
                 }
             ChatView()
                 .tabItem{
-                    Label("Chat", systemImage: "contact")
+                    Label("Chat", systemImage: "person.crop.circle")
                 }
         }
     }
