@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CheckoutView: View {
     @EnvironmentObject var order:Order
-    let paymentTypes = ["Cash","Credic Card", "Points"]
+    let paymentTypes = ["Cash","Credit Card", "Points"]
     let tipAmounts = [10, 15,20, 25, 0]
     @State private var showingPaymentAlert = false
     @State private var paymentType = "Cash"
@@ -23,7 +23,9 @@ struct CheckoutView: View {
         formatter.numberStyle = .currency
         let total = Double(order.total)
         let tipValue = total / 100 * Double(tipAmount)
-        return formatter.string(from: NSNumber(value: total + tipValue)) ?? "$0"
+        
+        let sum =  NSNumber(value: total + tipValue)
+        return "$\(sum)"
         
     }
     

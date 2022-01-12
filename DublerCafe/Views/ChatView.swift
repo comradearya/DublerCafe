@@ -46,6 +46,9 @@ struct ChatView: View {
                                 model.text = ""
                             }
                         }
+                        .clipShape(Circle())
+                        .background(.blue)
+                        .foregroundColor(.white)
                     }.padding()
                 }
             }.navigationBarTitle("Запитай в нас")
